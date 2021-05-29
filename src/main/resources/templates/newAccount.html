@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>Client Managemant</title>
+</head>
+<body>
+<div class="container">
+    <h1>Account Managemant</h1>
+    <hr>
+    <h2>Save Account</h2>
+    <form  action="#" th:action="@{/saveAccount}" th:object="${account}"  method="post" >
+
+        <input type="text" th:field = "*{account_num}" placeholder="Account Number" class="form-control mb-4 col-4">
+        <input type="text" th:field = "*{creation_date}" placeholder="Creation Date of Account" class="form-control mb-4 col-4">
+        <input type="text" th:field = "*{account_type}" placeholder="Account Type" class="form-control mb-4 col-4">
+        <input type="text" th:field = "*{account_solde}" placeholder="Account Solde" class="form-control mb-4 col-4">
+
+      <!--  <select  th:field = "*{client_account}" class="form-control mb-4 col-4">
+            <option selected value="">choose Client</option>
+            <option  th:each ="client : ${cl}" th:text="${client.name}" th:value="${client.id}" ></option>
+        </select>-->
+        <button type="submit" class="btn btn btn-dark col-2">Save</button>
+
+    </form>
+    <a th:href="@{/clients}"> Return to list of Accounts</a>
+</div>
+</body>
+</html>

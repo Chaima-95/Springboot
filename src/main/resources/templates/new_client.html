@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <title>Client Managemant</title>
+</head>
+<body>
+<div class="container">
+  <h1>Client Managemant</h1>
+  <hr>
+  <h2>Save Client</h2>
+  <form  action="#" th:action="@{/saveClient}" th:object="${client}"  method="post" >
+
+    <input type="text" th:field = "*{name}" placeholder="Client First Name" class="form-control mb-4 col-4">
+    <input type="text" th:field = "*{last_name}" placeholder="Client Lst Name" class="form-control mb-4 col-4">
+    <input type="text" th:field = "*{CIN}" placeholder="Client CIN" class="form-control mb-4 col-4">
+    <input type="text" th:field = "*{birth_date}" placeholder="Client birth date" class="form-control mb-4 col-4">
+    <input type="text" th:field = "*{e_mail}" placeholder="Client Email" class="form-control mb-4 col-4">
+    <input type="text" th:field = "*{phone_nbr}" placeholder="Client Phone number" class="form-control mb-4 col-4">
+
+    <button type="submit" class="btn btn btn-dark col-2">Save</button>
+
+  </form>
+  <a th:href="@{/clients}"> Return to list of Clients</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Clients Management System</title>
+</head>
+<body>
+<div class="container my-2">
+
+    <h1> List Of Accounts </h1>
+    <a th:href = "@{/showNewAccount}" class="btn btn btn-danger btn-sm mb-3">Add Account</a>
+    <table border="2" class="table table-striped table-responsive-md ">
+        <thead>
+        <tr>
+            <th> account_num</th>
+            <th>creation_date </th>
+            <th>account_type</th>
+            <th>account_solde</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="acc : ${accountlist}">
+            <td th:text= "${acc.account_num}"></td>
+            <td th:text = "${acc.creation_date}"></td>
+            <td th:text = "${acc.account_type}"></td>
+            <td th:text = "${acc.account_solde}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a th:href="@{/client_page}"> Go To client list</a>
+
+</body>
+</html>
